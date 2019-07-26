@@ -19,6 +19,11 @@
   color: white;
 }
 
+.Compony-name {
+  background-color: red;
+  color:blue;  
+}
+
 .App-link {
   color: #61dafb;
 }
