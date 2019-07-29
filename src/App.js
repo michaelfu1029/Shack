@@ -1,23 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './spin.png';
 import './App.css';
-
+import Pie from './components/PieChart';
+import Form from "./components/Form"
+ 
 function App() {
   return (
     <div className="App">
+      
       <header className="App-header">
+        <p className="Compony-name">Shack</p>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Shack
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Help you decide!
-        </a>
+        <Pie val1={10} val2={15} val3={20}/>
+        <Form title="Name"/>
       </header>
     </div>
   );
