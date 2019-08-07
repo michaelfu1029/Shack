@@ -8,9 +8,11 @@ class App extends React.Component{
   constructor() {
     super()
     this.state = {
-      val1: 10,
-      val2: 10,
-      val3: 10
+      val: [
+        10,
+        10,
+        10
+      ]
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -18,9 +20,11 @@ class App extends React.Component{
 
   handleChange(v1, v2, v3) {
     this.setState({
-      val1: v1,
-      val2: v2,
-      val3: v3
+      val: [
+        v1,
+        v2,
+        v3
+      ]
     })
   }
 
@@ -30,7 +34,7 @@ class App extends React.Component{
         <header className="App-header">
           <p className="Compony-name">Shack</p>
           <img src={logo} className="App-logo" alt="logo" />
-          <Pie val1= {this.state.val1} val2= {this.state.val2} val3= {this.state.val3}/>
+          <Pie val= {this.state.val}/>
           <Form title="Name" handleChange={this.handleChange}/>
         </header>
       </div>
