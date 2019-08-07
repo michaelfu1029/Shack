@@ -3,14 +3,24 @@ import PieChart from 'react-minimal-pie-chart';
 
 class Pie extends React.Component{
     render() {
+        let sections = []
+        let colours = [
+            '#E38627',
+            '#C13C37',
+            '#6A2135'
+        ]
+            
+        for (let i = 0; i < this.props.val.length; i++) {
+            sections.push({ title: String(i), value:  this.props.val[i], color: colours[i]});
+        }
+
+        // let sections = [
+        //     { title: 'One',   value:  this.props.val[0], color: '#E38627' },
+        //     { title: 'Two',   value:  this.props.val[1], color: '#C13C37' },
+        //     { title: 'Three', value:  this.props.val[2], color: '#6A2135' }
+        // ]
         return(
-            <PieChart
-                data={[
-                  { title: 'One', value:  this.props.val1, color: '#E38627' },
-                  { title: 'Two', value:  this.props.val2, color: '#C13C37' },
-                  { title: 'Three', value: this.props.val3, color: '#6A2135' },
-                ]}
-            />
+            <PieChart data={sections}/>
         )
     }
 }

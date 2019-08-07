@@ -15,9 +15,9 @@ class Form extends React.Component{
                 <label>
                     {this.props.title}:
                     {/* <input type="text" name="name" placeholder="Choice"/> */}
-                    <input type="number" min={0} name="percent1" placeholder="value"/>
-                    <input type="number" min={0} name="percent2" placeholder="value"/>
-                    <input type="number" min={0} name="percent3" placeholder="value"/>
+                    <input type="number" min={0} name="percent1" placeholder="value" defaultValue={0}/>
+                    <input type="number" min={0} name="percent2" placeholder="value" defaultValue={0}/>
+                    <input type="number" min={0} name="percent3" placeholder="value" defaultValue={0}/>
                 </label>
                 <input type="submit" value="Submit"/>
             </form>
