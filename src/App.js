@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './spin.png';
 import './App.css';
-import Pie from './components/PieChart';
-import Form from "./components/Form"
+import Pie from './components/Pie';
+import Form from './components/Form'
  
 class App extends React.Component{
   constructor() {
@@ -18,12 +18,12 @@ class App extends React.Component{
   }
 
 
-  handleChange(v1, v2, v3) {
+  handleChange(newVals) {
     this.setState({
       val: [
-        v1,
-        v2,
-        v3
+        newVals[0],
+        newVals[1],
+        newVals[2]
       ]
     })
   }
