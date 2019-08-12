@@ -7,11 +7,15 @@ class Pie extends React.Component{
         let colours = [
             '#E38627',
             '#C13C37',
-            '#6A2135'
+            '#6A2135',
+            '#FFFFFF',
+            '#C0C0C0',
+            '#000000',
+            '#FF5733'
         ]
             
-        for (let i = 0; i < this.props.val.length; i++) {
-            sections.push({ title: String(i), value:  this.props.val[i], color: colours[i]});
+        for (let i = 0; i < this.props.data.length; i++) {
+            sections.push({ title: String(i), value:  this.props.data[i], color: colours[i]});
         }
 
         // let sections = [
