@@ -64,7 +64,7 @@ class Form extends React.Component{
                     </label>
                     <input type="submit" value="Submit"/>
                 </form>
-                <AddButton data={this.state.choices} handleChange={this.increment}/>
+                <AddButton colours={this.props.colours} data={this.state.choices} handleChange={this.increment}/>
             </div>
             
         )

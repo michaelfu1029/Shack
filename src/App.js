@@ -25,14 +25,23 @@ class App extends React.Component{
 
 
   render() {
+    let colours = [
+      '#E38627',
+      '#C13C37',
+      '#6A2135',
+      '#FFFFFF',
+      '#C0C0C0',
+      '#000000',
+      '#FF5733'
+    ]
     return (
       
       <div className="App">
         <header className="App-header">
           <p className="Compony-name">Shack</p>
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <Pie data={this.state.data}/>
-          <Form title="Name" data={this.state.data} handleChange={this.handleChange}/>
+          <Pie colours={colours} data={this.state.data}/>
+          <Form title="Name" colours={colours} data={this.state.data} handleChange={this.handleChange}/>
           
         </header>
       </div>
