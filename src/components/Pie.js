@@ -16,7 +16,16 @@ class Pie extends React.Component{
         //     { title: 'Three', value:  this.props.val[2], color: '#6A2135' }
         // ]
         return(
-            <PieChart data={sections}/>
+            <PieChart 
+            data={sections} 
+            label
+            labelStyle={{
+                fontSize: '5px',
+                fontFamily: 'sans-serif',
+                fill: '#121212'
+            }}
+            // labelPosition={112}
+            />
         )
     }
 }
