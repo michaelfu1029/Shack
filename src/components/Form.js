@@ -20,9 +20,7 @@ class Form extends React.Component{
     handleChange(id, value) {
         this.setState(prevState => {
             let updatedChoices = []
-            // Used prevState.choices.length - 1 because choices was 
-            // randomly incrementing an extra time on form entry changed
-            for(let i = 0; i < prevState.choices.length - 1; i++) {
+            for(let i = 0; i < prevState.choices.length; i++) {
                 if (prevState.choices[i].id === id) {
                     updatedChoices.push({id: i, value: value})
                 } else {
@@ -48,12 +46,12 @@ class Form extends React.Component{
             key={item.id} id={item.id} 
             value={item.value} 
             handleChange={this.handleChange}
+            names={this.props.names}
+            handleNameChange={this.props.handleNameChange}
             />)
         return (
             <div>
                 <form onSubmit={(event)=>{
-                    //this is to prevent a bug, not sure why state increments by one
-                    this.state.choices.pop()
                     event.preventDefault();
                     let updatedValues = this.state.choices.map(choice => choice.value);
                     this.props.handleChange(updatedValues);
@@ -64,7 +62,12 @@ class Form extends React.Component{
                     </label>
                     <input type="submit" value="Update Choices"/>
                 </form>
-                <AddButton colours={this.props.colours} data={this.state.choices} handleChange={this.increment}/>
+                <AddButton 
+                    colours={this.props.colours} 
+                    data={this.state.choices} 
+                    handleChange={this.increment}
+                    names={this.props.names}
+                    setName={this.props.setName}/>
             </div>
             
         )

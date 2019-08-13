@@ -7,7 +7,7 @@ class Pie extends React.Component{
         
             
         for (let i = 0; i < this.props.data.length; i++) {
-            sections.push({ title: String(i), value:  this.props.data[i], color: this.props.colours[i]});
+            sections.push({ title: this.props.names[i], value:  this.props.data[i], color: this.props.colours[i]});
         }
 
         // let sections = [

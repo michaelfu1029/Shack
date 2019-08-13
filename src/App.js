@@ -12,16 +12,46 @@ class App extends React.Component{
         10,
         10,
         10
+      ],
+      names: [
+        "Choice 1",
+        "Choice 2",
+        "Choice 3"
       ]
     }
     this.handleChange = this.handleChange.bind(this)
+    this.setName = this.setName.bind(this)
+    this.handleNameChange = this.handleNameChange.bind(this)
+
   }
 
   handleChange(newdata) {
     this.setState({
-      data: newdata
+      data: newdata,
     })
   }
+
+  setName(newdata) {
+    this.setState({
+      names: newdata
+    })
+  }
+
+  handleNameChange(id, value) {
+    this.setState(prevState => {
+        let updatedNames = []
+        for(let i = 0; i < prevState.names.length; i++) {
+            if (i === id) {
+              updatedNames.push(value)
+            } else {
+              updatedNames.push(prevState.names[i])
+            }
+        }
+        return {
+            names: updatedNames
+        }
+    })
+}
 
 
   render() {
@@ -39,9 +69,19 @@ class App extends React.Component{
       <div className="App">
         <p className="Compony-name">Shack</p>
         <header className="App-header">
-          <Pie className="Pie" colours={colours} data={this.state.data}/>
+          <Pie className="Pie" 
+            names={this.state.names} 
+            colours={colours} 
+            data={this.state.data}
+            />
           <div className="Spacer">spacer</div>
-          <Form title="Choices" colours={colours} data={this.state.data} handleChange={this.handleChange}/>
+          <Form title="Choices" names={this.state.names} 
+            colours={colours} 
+            data={this.state.data} 
+            handleChange={this.handleChange} 
+            names={this.state.names}
+            setName={this.setName}
+            handleNameChange={this.handleNameChange}/>
           
         </header>
       </div>
