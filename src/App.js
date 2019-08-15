@@ -75,7 +75,7 @@ class App extends React.Component{
             data={this.state.data}
             />
           <div className="Spacer">spacer</div>
-          <Form title="Choices" names={this.state.names} 
+          <Form title="Choices"
             colours={colours} 
             data={this.state.data} 
             handleChange={this.handleChange} 
