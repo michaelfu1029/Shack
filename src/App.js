@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import PieChart from './components/Pie';
 import Form from './components/Form'
+import RandomChoice from './components/RandomChoice'
  
 class App extends React.Component{
   constructor() {
@@ -17,17 +18,19 @@ class App extends React.Component{
         "Choice 1",
         "Choice 2",
         "Choice 3"
-      ]
+      ],
+      display: "Randomize"
     }
     this.handleChange = this.handleChange.bind(this)
     this.setName = this.setName.bind(this)
     this.handleNameChange = this.handleNameChange.bind(this)
+    this.setDisplay = this.setDisplay.bind(this)
 
   }
 
   handleChange(newdata) {
     this.setState({
-      data: newdata,
+      data: newdata
     })
   }
 
@@ -37,6 +40,11 @@ class App extends React.Component{
     })
   }
 
+  setDisplay(newDisplay) {
+    this.setState({
+      display: newDisplay
+    })
+  }
   handleNameChange(id, value) {
     this.setState(prevState => {
         let updatedNames = []
@@ -83,7 +91,12 @@ class App extends React.Component{
             names={this.state.names} 
             colours={colours} 
             data={this.state.data}/>
-          {/* <div className="Spacer">spacer</div> */}
+          <RandomChoice 
+            display={this.state.display}
+            names={this.state.names}
+            data={this.state.data}
+            setDisplay={this.setDisplay}/>
+
          
         </header>
       </div>

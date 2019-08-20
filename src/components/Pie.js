@@ -17,32 +17,16 @@ class PieChart extends React.Component{
             backgroundColor.push(this.props.colours[i]);
         }
         let dataset = [{data, backgroundColor}]
-        // let sections = [
-        //     { title: 'One',   value:  this.props.val[0], color: '#E38627' },
-        //     { title: 'Two',   value:  this.props.val[1], color: '#C13C37' },
-        //     { title: 'Three', value:  this.props.val[2], color: '#6A2135' }
-        // ]
+
         return(
             <Pie 
-                
                 data={{
                     labels: this.props.names,
                     datasets: dataset
                 }}
                 height = '50%'
                 options={{ maintainAspectRatio: false }}
-                // width ='20%'
             />
-            // <PieChart 
-            // data={sections} 
-            // label
-            // labelStyle={{
-            //     fontSize: '5px',
-            //     fontFamily: 'sans-serif',
-            //     fill: '#121212'
-            // }}
-            // labelPosition={112}
-            // />
         )
     }
 }
