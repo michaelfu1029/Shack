@@ -1,33 +1,50 @@
 import React from 'react';
-import PieChart from 'react-minimal-pie-chart';
+// import PieChart from 'react-minimal-pie-chart';
+import { Pie } from 'react-chartjs-2'
+import { defaults } from 'react-chartjs-2';
 
-class Pie extends React.Component{
+class PieChart extends React.Component{
     render() {
-        let sections = []
+        // Disable animating charts by default.
+        // defaults.global.animation = false;
         
-            
+        let sections = []
+        let data = []
+        let backgroundColor = []
+        
         for (let i = 0; i < this.props.data.length; i++) {
-            sections.push({ title: this.props.names[i], value:  this.props.data[i], color: this.props.colours[i]});
+            data.push(this.props.data[i])
+            backgroundColor.push(this.props.colours[i]);
         }
-
+        let dataset = [{data, backgroundColor}]
         // let sections = [
         //     { title: 'One',   value:  this.props.val[0], color: '#E38627' },
         //     { title: 'Two',   value:  this.props.val[1], color: '#C13C37' },
         //     { title: 'Three', value:  this.props.val[2], color: '#6A2135' }
         // ]
         return(
-            <PieChart 
-            data={sections} 
-            label
-            labelStyle={{
-                fontSize: '5px',
-                fontFamily: 'sans-serif',
-                fill: '#121212'
-            }}
-            // labelPosition={112}
+            <Pie 
+                
+                data={{
+                    labels: this.props.names,
+                    datasets: dataset
+                }}
+                height = '50%'
+                options={{ maintainAspectRatio: false }}
+                // width ='20%'
             />
+            // <PieChart 
+            // data={sections} 
+            // label
+            // labelStyle={{
+            //     fontSize: '5px',
+            //     fontFamily: 'sans-serif',
+            //     fill: '#121212'
+            // }}
+            // labelPosition={112}
+            // />
         )
     }
 }
 
-export default Pie;
+export default PieChart;
