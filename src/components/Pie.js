@@ -1,12 +1,12 @@
 import React from 'react';
 // import PieChart from 'react-minimal-pie-chart';
-import { Doughnut } from 'react-chartjs-2'
+import { Pie } from 'react-chartjs-2'
 import { defaults } from 'react-chartjs-2';
 
 class PieChart extends React.Component{
     render() {
         // Disable animating charts by default.
-        defaults.global.animation = false;
+        // defaults.global.animation = false;
         
         let sections = []
         let data = []
@@ -23,13 +23,14 @@ class PieChart extends React.Component{
         //     { title: 'Three', value:  this.props.val[2], color: '#6A2135' }
         // ]
         return(
-            <Doughnut 
+            <Pie 
                 
                 data={{
                     labels: this.props.names,
                     datasets: dataset
                 }}
-                height = '80%'
+                height = '50%'
+                options={{ maintainAspectRatio: false }}
                 // width ='20%'
             />
             // <PieChart 
