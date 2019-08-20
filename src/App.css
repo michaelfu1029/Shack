@@ -33,20 +33,17 @@ Form {
   position: relative;
   color:white;
   font-size: calc(10px + 2vmin);
-  /* background-color: aqua; */
 }
 
 canvas {
   max-width: 500px;
   position: relative;
   right: 250px;
-  /* background-color: red; */
 }
 
 .RandomChoice {
-  /* background-color: pink; */
   position: absolute;
-  right: 150px;
+  right: 180px;
   width: 200px;
   height: 200px;
 }

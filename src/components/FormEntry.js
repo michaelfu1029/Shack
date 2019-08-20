@@ -6,7 +6,7 @@ class FormEntry extends React.Component{
             <div>
                 <input
                 type="text"
-                maxLength="10"
+                maxLength="11"
                 placeholder={this.props.names[this.props.id]}
                 onChange={(event) => {
                     this.props.handleNameChange(this.props.id, event.target.value)}}
