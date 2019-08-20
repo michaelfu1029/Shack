@@ -1,7 +1,7 @@
 import React from 'react';
 // import logo from './spin.png';
 import './App.css';
-import Pie from './components/Pie';
+import PieChart from './components/Pie';
 import Form from './components/Form'
  
 class App extends React.Component{
@@ -69,13 +69,9 @@ class App extends React.Component{
       <div className="App">
         <p className="Compony-name">Shack</p>
         <header className="App-header">
-          <Pie className="Pie" 
-            names={this.state.names} 
-            colours={colours} 
-            data={this.state.data}
-            />
-          <div className="Spacer">spacer</div>
-          <Form title="Choices"
+          <Form 
+            className="Form"
+            title="Choices"
             colours={colours} 
             data={this.state.data} 
             handleChange={this.handleChange} 
@@ -83,6 +79,12 @@ class App extends React.Component{
             setName={this.setName}
             handleNameChange={this.handleNameChange}/>
           
+          <PieChart className="Pie" 
+            names={this.state.names} 
+            colours={colours} 
+            data={this.state.data}/>
+          {/* <div className="Spacer">spacer</div> */}
+         
         </header>
       </div>
     );
